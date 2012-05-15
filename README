@@ -1,0 +1,66 @@
+FDF QuickLook PlugIn
+==========================
+
+Basic integration for Agilent/Varian .fdf files.
+Creates quicklook plugins and thumbnail views
+
+
+Many thanks to Laura Dickey for the open source BrushViewQL plugin that
+provided an excellent template for this work.
+(brushviewer.sourceforge.net).
+
+
+Compilation
+-----------
+
+This has been tested only with Xcode v 4.0 and up on OSX v 10.6 and 10.7. 
+Creates QLPluginFDF.qlgenerator
+
+Installation
+-------------
+
+Copy QLPluginFDF.qlgenerator file into one of the following locations:
+
+~/Library/QuickLook
+ (access by the current user only)
+
+or
+
+/Library/QuickLook
+ (systemwide -- you will probably need admin access to copy here)
+
+ -- create the QuickLook subdirectory first if it does not exist.
+
+The qlmanage service must be restarted before it can use the new plugin.
+Do so either by logging out and back in, or running the following
+command in terminal:
+
+qlmanage -r 
+
+
+Limitations
+-----------
+
+The window and level of images are fixed as a linear scaling between the
+minimum and maximum image values.
+
+Some issues may arise if you have any Adobe tools installed.  Adobe
+provides an .fdf extension for some file types, and the qlmanage can
+sometimes not recognize the difference.  If this happens try restarting
+the service or logging out and in again. 
+
+
+License
+-------
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program.  If not, see <http://www.gnu.org/licenses/>.
