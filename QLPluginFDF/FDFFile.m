@@ -32,13 +32,13 @@
 #import "fdf_helpers.h"
 #import "complex.h"
 
-inline uint16_t byteswap2(uint16_t a)
+uint16_t byteswap2(uint16_t a)
 {
    a = ((a & 0x00FF) << 8) | ((a & 0xFF00) >> 8);
    return a;
 }
 
-inline uint32_t byteswap4(uint32_t a)
+uint32_t byteswap4(uint32_t a)
 {
    a = ((a & 0x000000FF) << 24) |
    ((a & 0x0000FF00) <<  8) |
@@ -47,7 +47,7 @@ inline uint32_t byteswap4(uint32_t a)
    return a;
 }
 
-inline uint64_t byteswap8(uint64_t a)
+uint64_t byteswap8(uint64_t a)
 {
    a = ((a & 0x00000000000000FFULL) << 56) | 
    ((a & 0x000000000000FF00ULL) << 40) | 
